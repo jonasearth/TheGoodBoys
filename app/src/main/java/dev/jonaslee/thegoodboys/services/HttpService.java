@@ -12,10 +12,7 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.util.Scanner;
 
-import javax.net.ssl.HttpsURLConnection;
-
 import dev.jonaslee.thegoodboys.DAO.*;
-
 
 public class HttpService extends AsyncTask<Void, Void, Control> {
 
@@ -30,7 +27,6 @@ public class HttpService extends AsyncTask<Void, Void, Control> {
         StringBuilder resp = new StringBuilder();
         try {
             URL url = new URL("http://35.198.59.162/tgb/controle.php" + arg);
-
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.setRequestProperty("Content-type", "application/json");
@@ -39,10 +35,11 @@ public class HttpService extends AsyncTask<Void, Void, Control> {
             connection.setConnectTimeout(5000);
             connection.connect();
             Scanner scanner = new Scanner(url.openStream());
+            Log.d("asdasd", "asdasdasd");
             while (scanner.hasNext()) {
                 resp.append(scanner.next());
-
             }
+            Log.d("asdasd", "asdasdasd");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (ProtocolException e) {
@@ -50,8 +47,6 @@ public class HttpService extends AsyncTask<Void, Void, Control> {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return new Gson().fromJson(resp.toString(), Control.class);
-
     }
 }

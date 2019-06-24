@@ -1,16 +1,12 @@
 package dev.jonaslee.thegoodboys;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.concurrent.ExecutionException;
@@ -26,7 +22,6 @@ public class Jogador extends AppCompatActivity {
         setContentView(R.layout.activity_jogador);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,7 +30,6 @@ public class Jogador extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
         final Bundle extras = getIntent().getExtras();
        /* if (extras.getByteArray("foto").length > 1){
             byte[] a = extras. getByteArray("foto");
@@ -43,7 +37,6 @@ public class Jogador extends AppCompatActivity {
             ImageView ft = findViewById(R.id.img_jogador_deta);
             ft.setImageBitmap(foto);
         }*/
-
         TextView nome = findViewById(R.id.det_nome_jog);
         nome.setText(extras.getString("nome"));
         TextView p_p = findViewById(R.id.det_pos_prim);
@@ -63,7 +56,6 @@ public class Jogador extends AppCompatActivity {
         TextView p_lanc = findViewById(R.id.det_Plancamento_jog);
         TextView f_chute = findViewById(R.id.det_Fchute_jog);
         TextView p_chute = findViewById(R.id.det_Pchute_jog);
-
         try {
             Control retorno = new HttpService("?type=seach&ref=jogador&stype=id&id=" + extras.getString("id")).execute().get();
             if (retorno.getStatus().length() == 5){
@@ -87,9 +79,7 @@ public class Jogador extends AppCompatActivity {
                 p_lanc.setText("P. LANÇAMENTO: " + args[12]);
                 f_chute.setText("F. CHUTE: " + args[13]);
                 p_chute.setText("P. CHUTE: " + args[14]);
-
             }
-
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -100,8 +90,6 @@ public class Jogador extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
-
     }
 
     @Override
@@ -109,7 +97,6 @@ public class Jogador extends AppCompatActivity {
         super.onBackPressed();
         this.finish();
         startActivity(new Intent(this, dev.jonaslee.thegoodboys.Jogadores.class));
-
     }
 
     @Override

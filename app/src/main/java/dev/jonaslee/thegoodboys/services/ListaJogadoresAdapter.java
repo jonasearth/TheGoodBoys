@@ -19,7 +19,6 @@ public class ListaJogadoresAdapter extends ArrayAdapter<Jogadores_serv> {
     private Activity context;
     private ArrayList<Jogadores_serv> jogadores;
 
-
     public ListaJogadoresAdapter(Activity context, ArrayList<Jogadores_serv> jogadores) {
         super(context,R.layout.lista_jogadores , jogadores);
         this.context = context;
@@ -40,5 +39,4 @@ public class ListaJogadoresAdapter extends ArrayAdapter<Jogadores_serv> {
         imageView.setImageBitmap(jogadores.get(position).getFoto());
         return view;
     }
-
 }

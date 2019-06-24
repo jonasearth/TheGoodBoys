@@ -9,19 +9,14 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
-import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.NotificationCompat;
-import android.view.View;
 
 import java.util.ArrayList;
 
-import dev.jonaslee.thegoodboys.Jogadores;
-import dev.jonaslee.thegoodboys.MainActivity;
 import dev.jonaslee.thegoodboys.R;
 
 public class Notificacao {
@@ -39,15 +34,11 @@ public class Notificacao {
         this.nomes = nomes;
         this.intent = intent;
         this.sendNot();
-
-
-
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void sendNot() {
         int importance = NotificationManager.IMPORTANCE_HIGH;
-
         NotificationChannel notificationChannel = new NotificationChannel("quartermaster", "quartermaster", importance);
         notificationChannel.enableLights(true);
         notificationChannel.setImportance(importance);
@@ -57,7 +48,6 @@ public class Notificacao {
         NotificationManager notificationManager = (NotificationManager)act.getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.createNotificationChannel(notificationChannel);
         int i = 0;
-
         if (!nomes.isEmpty()){
             while (nomes.size() > i){
                 intent.putExtra(nomes.get(i).toString(), extras.get(i).toString());
@@ -76,8 +66,6 @@ public class Notificacao {
                 .setLargeIcon(myLogo)
                 .setSmallIcon(R.drawable.ic_menu_send)
                 .setSound(notificationSound)
-
-
                 .setChannelId("quartermaster")
                 .setStyle(new NotificationCompat.BigTextStyle()
                         .bigText(body))

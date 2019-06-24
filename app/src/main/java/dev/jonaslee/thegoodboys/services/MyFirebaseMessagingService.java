@@ -35,7 +35,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             Log.d(TAG, "msg body: " + remoteMessage.getNotification().getBody());
             sendNotification(remoteMessage.getNotification().getBody());
         }
-
     }
 
     @TargetApi(Build.VERSION_CODES.O)
@@ -44,12 +43,9 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         this.sendNotification(asd);
     }
 
-
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void sendNotification(String body) {
-
             int importance = NotificationManager.IMPORTANCE_HIGH;
-
             NotificationChannel notificationChannel = new NotificationChannel("quartermaster", "quartermaster", importance);
             notificationChannel.enableLights(true);
             notificationChannel.setLightColor(Color.RED);
@@ -59,7 +55,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             notificationManager.createNotificationChannel(notificationChannel);
             Intent intent = new Intent(this, MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
             PendingIntent pendingIntent =  PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
             Uri notificationSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
             NotificationCompat.Builder notifiBuilder = new NotificationCompat.Builder(this)
@@ -72,7 +67,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 .setStyle(new NotificationCompat.BigTextStyle()
                         .bigText(body))
                 .setContentIntent(pendingIntent);
-
             notificationManager.notify(0, notifiBuilder.build());
     }
 }

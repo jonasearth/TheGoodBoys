@@ -1,6 +1,5 @@
 package dev.jonaslee.thegoodboys;
 
-import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,20 +15,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
-import org.xml.sax.Parser;
-
 import java.util.ArrayList;
-import java.util.concurrent.ExecutionException;
 
-import dev.jonaslee.thegoodboys.DAO.Control;
-import dev.jonaslee.thegoodboys.DAO.Login;
 import dev.jonaslee.thegoodboys.services.Backthread;
-import dev.jonaslee.thegoodboys.services.HttpService;
-import dev.jonaslee.thegoodboys.services.MyFirebaseMessagingService;
 import dev.jonaslee.thegoodboys.services.Notificacao;
 
 public class MainActivity extends AppCompatActivity
@@ -50,7 +40,6 @@ public class MainActivity extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -58,19 +47,11 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-
-
-
-
         final TextView warn = findViewById(R.id.warn);
         warn.setText(user);
-
-       if (this.user == ""){
+        if (this.user == ""){
            startActivity(new Intent(this, dev.jonaslee.thegoodboys.Login.class));
         }
-
-
     }
 
     @Override
@@ -113,20 +94,14 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
         int id = item.getItemId();
-
         if (id == R.id.nav_agendar) {
-
         } else if (id == R.id.nav_jogadores) {
             startActivity(new Intent(this, dev.jonaslee.thegoodboys.Jogadores.class));
         } else if (id == R.id.nav_times) {
         } else if (id == R.id.nav_historicos) {
-
         } else if (id == R.id.nav_configuracoes) {
-
         } else if (id == R.id.nav_share) {
-
         } else if (id == R.id.nav_send) {
             ArrayList<String> nomes = new ArrayList<String>();
             ArrayList extras = new ArrayList();
@@ -138,13 +113,9 @@ public class MainActivity extends AppCompatActivity
             extras.add(2, "Goleiro%21Meio");
             Intent intent = new Intent(this, dev.jonaslee.thegoodboys.Jogador.class);
             Notificacao nova = new Notificacao("BORA PORRA", this, nomes, extras, intent);
-
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-
 }

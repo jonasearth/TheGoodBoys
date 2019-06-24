@@ -14,7 +14,6 @@ import java.net.URL;
 
 import javax.net.ssl.HttpsURLConnection;
 
-
 public class GetImage extends AsyncTask<Void, Void, Bitmap> {
 
     private final String arg;
@@ -41,7 +40,6 @@ public class GetImage extends AsyncTask<Void, Void, Bitmap> {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return img;
     }
 }
