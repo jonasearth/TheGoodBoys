@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Jogador"
+    tools:showIn="@layout/activity_jogador">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/img_jogador_deta"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@android:color/white"
+            android:visibility="visible"
+            app:srcCompat="@drawable/jogador1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/det_nome_jog"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:gravity="center"
+                android:text="Herbeti Jonas"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/det_apelido_jog"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Mr.Robot da Gostosura"
+                android:textSize="14sp"
+                android:textStyle="italic" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/det_pos_prim"
+                        android:layout_width="match_parent"
+                        android:layout_height="33dp"
+                        android:gravity="center"
+                        android:text="POS PRIM: GOL "
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/det_pos_sec"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:gravity="center"
+                        android:text="POS SEC: ZAG"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/det_idade_jog"
+                        android:layout_width="match_parent"
+                        android:layout_height="33dp"
+                        android:gravity="center"
+                        android:text="IDADE: 21" />
+
+                    <TextView
+                        android:id="@+id/det_cond_jog"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:gravity="center"
+                        android:text="COND FISICO: C" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="ATRIBUTOS"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/det_atk_jog"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="ATAQUE: 86"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/det_vel_jog"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="VELOCIDADE: 86"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/det_precisao_jog"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="PRECISÃO: 88"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/det_drible_jog"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="DRIBLE: 45"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/det_dominio_jog"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="DOMINIO: 88"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/det_Fchute_jog"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="F. DO CHUTE: 88"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/det_def_jog"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="DEFESA: 86"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/det_marca_jog"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="MARCAÇÃO: 86"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/det_forca_jog"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="FORÇA: 86"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/det_Ppasse_jog"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="P. PASSE: 86"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/det_Plancamento_jog"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="P. LANÇAMENTO: 86"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/det_Pchute_jog"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="P. CHUTE: 86"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:gravity="center"
+            android:text="ESTATISTICAS"
+            android:textSize="24sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/est_gols_jog"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="GOLS: 6"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/est_partidas_jog"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="PARTIDAS: 6"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/est_partidas_jog11"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="PARTIDAS: 6"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/est_partidas_jog12"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="PARTIDAS: 6"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/est_partidas_jog13"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="PARTIDAS: 6"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/est_partidas_jog14"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="PARTIDAS: 6"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/est_partidas_jog15"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="PARTIDAS: 6"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/est_assist_jog"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="ASSISTENCIAS: 5"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/est_Gdefesas_jog"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="G. DEFESAS: 5"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/est_Gdefesas_jog11"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="G. DEFESAS: 5"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/est_Gdefesas_jog12"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="G. DEFESAS: 5"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/est_Gdefesas_jog13"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="G. DEFESAS: 5"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/est_Gdefesas_jog14"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="G. DEFESAS: 5"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/est_Gdefesas_jog15"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="G. DEFESAS: 5"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

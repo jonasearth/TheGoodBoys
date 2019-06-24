@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_agendar"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="Agendar Baba" />
+        <item
+            android:id="@+id/nav_times"
+            android:icon="?android:attr/actionModePasteDrawable"
+            android:title="Times/Escalações" />
+        <item
+            android:id="@+id/nav_jogadores"
+            android:icon="@android:drawable/ic_menu_myplaces"
+            android:title="Jogadores" />
+        <item
+            android:id="@+id/nav_historicos"
+            android:icon="@android:drawable/ic_menu_week"
+            android:title="Historicos" />
+        <item
+            android:id="@+id/nav_configuracoes"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Configurações" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Enviar Convite" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Outros" />
+        </menu>
+    </item>
+
+</menu>
