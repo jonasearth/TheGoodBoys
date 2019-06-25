@@ -12,10 +12,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 import dev.jonaslee.thegoodboys.DAO.Control;
+import dev.jonaslee.thegoodboys.services.GetImage;
 import dev.jonaslee.thegoodboys.services.HttpService;
 import dev.jonaslee.thegoodboys.services.Jogadores_serv;
 import dev.jonaslee.thegoodboys.services.ListaJogadoresAdapter;
@@ -59,7 +61,7 @@ public class Jogadores extends AppCompatActivity {
                             String subs[] = resp[i].split("~");
                             Bitmap img = null;
                             int id = Integer.parseInt(subs[0]);
-                            Bitmap bitimg =  null;//new GetImage("http://35.198.59.162/tgb/fotos/" + id + ".jpg").execute().get();
+                            Bitmap bitimg =  new GetImage("http://35.198.59.162/tgb/fotos/" + id + ".jpg").execute().get();
                             String nome = subs[1].replace("%20", " ");
                             String pos = subs[2].replace("%20", " ");
                             lista[0].add(new Jogadores_serv(id, bitimg, nome, pos));
@@ -84,14 +86,15 @@ public class Jogadores extends AppCompatActivity {
                 Intent intent = new Intent(asds, dev.jonaslee.thegoodboys.Jogador.class);
                 jogadores[0] = (Jogadores_serv) lista[0].get(position);
                 id_jogador[0] = jogadores[0].getId();
-               //Bitmap bm = jogadores[0].getFoto();
-               // ByteArrayOutputStream os = new ByteArrayOutputStream();
-                 //       bm.compress(Bitmap.CompressFormat.PNG, 100, os);
+               Bitmap bm = jogadores[0].getFoto();
+                ByteArrayOutputStream os = new ByteArrayOutputStream();
+                        bm.compress(Bitmap.CompressFormat.PNG, 100, os);
                 Log.d("coisasss", "asdasd " + id_jogador[0]);
                 intent.putExtra("id", "" + id_jogador[0]);
-              //  intent.putExtra("foto", os.toByteArray());
+                intent.putExtra("foto", os.toByteArray());
                 intent.putExtra("nome", jogadores[0].getNome());
                 intent.putExtra("posicao", jogadores[0].getPosicao());
+                intent.putExtra("as", "asd");
                 startActivity(intent);
                 asds.finish();
             }

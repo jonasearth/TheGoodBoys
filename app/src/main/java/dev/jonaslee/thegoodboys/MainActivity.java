@@ -108,9 +108,11 @@ public class MainActivity extends AppCompatActivity
             nomes.add(0, "id");
             nomes.add(1, "nome");
             nomes.add(2,  "posicao");
+            nomes.add(3,  "as");
             extras.add(0, "1");
             extras.add(1,"jonas gostosao");
             extras.add(2, "Goleiro%21Meio");
+            extras.add(3, "as");
             Intent intent = new Intent(this, dev.jonaslee.thegoodboys.Jogador.class);
             Notificacao nova = new Notificacao("BORA PORRA", this, nomes, extras, intent);
         }

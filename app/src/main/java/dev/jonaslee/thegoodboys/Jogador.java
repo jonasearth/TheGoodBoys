@@ -1,12 +1,15 @@
 package dev.jonaslee.thegoodboys;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.concurrent.ExecutionException;
@@ -31,12 +34,13 @@ public class Jogador extends AppCompatActivity {
             }
         });
         final Bundle extras = getIntent().getExtras();
-       /* if (extras.getByteArray("foto").length > 1){
+
+        if (extras.getString("as").equals("asd")){
             byte[] a = extras. getByteArray("foto");
             Bitmap foto = BitmapFactory.decodeByteArray(a, 0, a.length);
             ImageView ft = findViewById(R.id.img_jogador_deta);
             ft.setImageBitmap(foto);
-        }*/
+        }
         TextView nome = findViewById(R.id.det_nome_jog);
         nome.setText(extras.getString("nome"));
         TextView p_p = findViewById(R.id.det_pos_prim);
