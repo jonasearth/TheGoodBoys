@@ -26,7 +26,7 @@ public class HttpService extends AsyncTask<Void, Void, Control> {
     protected Control doInBackground(Void... voids) {
         StringBuilder resp = new StringBuilder();
         try {
-            URL url = new URL("http://35.198.59.162/tgb/controle.php" + arg);
+            URL url = new URL("http://jonaslee.dev/tgb/controle.php" + arg);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.setRequestProperty("Content-type", "application/json");

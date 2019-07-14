@@ -61,7 +61,7 @@ public class Jogadores extends AppCompatActivity {
                             String subs[] = resp[i].split("~");
                             Bitmap img = null;
                             int id = Integer.parseInt(subs[0]);
-                            Bitmap bitimg =  new GetImage("http://35.198.59.162/tgb/fotos/" + id + ".jpg").execute().get();
+                            Bitmap bitimg =  new GetImage("http://jonaslee.dev/tgb/fotos/" + id + ".jpg").execute().get();
                             String nome = subs[1].replace("%20", " ");
                             String pos = subs[2].replace("%20", " ");
                             lista[0].add(new Jogadores_serv(id, bitimg, nome, pos));
