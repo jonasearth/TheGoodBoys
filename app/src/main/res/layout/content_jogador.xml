@@ -32,7 +32,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="42dp"
                 android:gravity="center"
-                android:text="Herbeti Jonas"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -41,7 +40,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="38dp"
                 android:gravity="center_vertical|center_horizontal"
-                android:text="Mr.Robot da Gostosura"
                 android:textSize="14sp"
                 android:textStyle="italic" />
 
@@ -61,7 +59,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="33dp"
                         android:gravity="center"
-                        android:text="POS PRIM: GOL "
+                        android:text="POS PRIM: "
                         android:textSize="15sp" />
 
                     <TextView
@@ -69,7 +67,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="36dp"
                         android:gravity="center"
-                        android:text="POS SEC: ZAG"
+                        android:text="POS SEC: "
                         android:textSize="15sp" />
                 </LinearLayout>
 
@@ -84,14 +82,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="33dp"
                         android:gravity="center"
-                        android:text="IDADE: 21" />
+                        android:text="IDADE: " />
 
                     <TextView
                         android:id="@+id/det_cond_jog"
                         android:layout_width="match_parent"
                         android:layout_height="36dp"
                         android:gravity="center"
-                        android:text="COND FISICO: C" />
+                        android:text="COND FISICO: " />
                 </LinearLayout>
             </LinearLayout>
 
@@ -141,7 +139,7 @@
                         android:layout_height="40dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="ATAQUE: 86"
+                        android:text="ATAQUE: "
                         android:textSize="18sp" />
 
                     <TextView
@@ -150,7 +148,7 @@
                         android:layout_height="40dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="VELOCIDADE: 86"
+                        android:text="VELOCIDADE: "
                         android:textSize="18sp" />
 
                     <TextView
@@ -159,7 +157,7 @@
                         android:layout_height="40dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="PRECISÃO: 88"
+                        android:text="PRECISÃO: "
                         android:textSize="18sp" />
 
                     <TextView
@@ -168,7 +166,7 @@
                         android:layout_height="40dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="DRIBLE: 45"
+                        android:text="DRIBLE: "
                         android:textSize="18sp" />
 
                     <TextView
@@ -177,7 +175,7 @@
                         android:layout_height="40dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="DOMINIO: 88"
+                        android:text="DOMINIO: "
                         android:textSize="18sp" />
 
                     <TextView
@@ -186,7 +184,7 @@
                         android:layout_height="40dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="F. DO CHUTE: 88"
+                        android:text="F. DO CHUTE: "
                         android:textSize="18sp" />
 
                 </LinearLayout>
@@ -211,7 +209,7 @@
                         android:layout_height="40dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="DEFESA: 86"
+                        android:text="DEFESA: "
                         android:textSize="18sp" />
 
                     <TextView
@@ -220,7 +218,7 @@
                         android:layout_height="40dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="MARCAÇÃO: 86"
+                        android:text="MARCAÇÃO: "
                         android:textSize="18sp" />
 
                     <TextView
@@ -229,7 +227,7 @@
                         android:layout_height="40dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="FORÇA: 86"
+                        android:text="FORÇA: "
                         android:textSize="18sp" />
 
                     <TextView
@@ -238,7 +236,7 @@
                         android:layout_height="40dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="P. PASSE: 86"
+                        android:text="P. PASSE: "
                         android:textSize="18sp" />
 
                     <TextView
@@ -247,7 +245,7 @@
                         android:layout_height="40dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="P. LANÇAMENTO: 86"
+                        android:text="P. LANÇAMENTO: "
                         android:textSize="18sp" />
 
                     <TextView
@@ -256,7 +254,7 @@
                         android:layout_height="40dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="P. CHUTE: 86"
+                        android:text="P. CHUTE: "
                         android:textSize="18sp" />
                 </LinearLayout>
             </LinearLayout>
@@ -293,7 +291,7 @@
                     android:layout_height="40dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="GOLS: 6"
+                    android:text="GOLS: "
                     android:textSize="18sp" />
 
                 <TextView
@@ -302,7 +300,7 @@
                     android:layout_height="40dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="PARTIDAS: 6"
+                    android:text="PARTIDAS: "
                     android:textSize="18sp" />
 
                 <TextView
@@ -363,7 +361,7 @@
                     android:layout_height="40dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="ASSISTENCIAS: 5"
+                    android:text="ASSISTENCIAS: "
                     android:textSize="18sp" />
 
                 <TextView
@@ -372,7 +370,7 @@
                     android:layout_height="40dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="G. DEFESAS: 5"
+                    android:text="G. DEFESAS: "
                     android:textSize="18sp" />
 
                 <TextView

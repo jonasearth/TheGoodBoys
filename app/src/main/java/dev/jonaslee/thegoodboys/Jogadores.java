@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
@@ -50,26 +51,30 @@ public class Jogadores extends AppCompatActivity {
                 }
                 try {
                     Control retorno = new HttpService(jog).execute().get();
-                    if (retorno.getStatus().length() == 5){
-                    }else{
-                        listView[0].setAdapter(jogadoresAdapter[0]);
-                        lista[0] = new ArrayList<Jogadores_serv>();
-                        listView[0].setAdapter(jogadoresAdapter[0]);
-                        String resp[] = retorno.getResp().split(",");
-                        int i = 0;
-                        while(resp.length > i){
-                            String subs[] = resp[i].split("~");
-                            Bitmap img = null;
-                            int id = Integer.parseInt(subs[0]);
-                            Bitmap bitimg =  new GetImage("http://jonaslee.dev/tgb/fotos/" + id + ".jpg").execute().get();
-                            String nome = subs[1].replace("%20", " ");
-                            String pos = subs[2].replace("%20", " ");
-                            lista[0].add(new Jogadores_serv(id, bitimg, nome, pos));
-                            i++;
+                    if (retorno.getStatus() == "erro"){
+                        Toast.makeText(getApplicationContext(), retorno.getResp(), Toast.LENGTH_SHORT).show();
+                    }else {
+                        if (retorno.getStatus().length() == 5) {
+                        } else {
+                            listView[0].setAdapter(jogadoresAdapter[0]);
+                            lista[0] = new ArrayList<Jogadores_serv>();
+                            listView[0].setAdapter(jogadoresAdapter[0]);
+                            String resp[] = retorno.getResp().split(",");
+                            int i = 0;
+                            while (resp.length > i) {
+                                String subs[] = resp[i].split("~");
+                                Bitmap img = null;
+                                int id = Integer.parseInt(subs[0]);
+                                Bitmap bitimg = new GetImage("http://jonaslee.dev/tgb/fotos/" + id + ".jpg").execute().get();
+                                String nome = subs[1].replace("%20", " ");
+                                String pos = subs[2].replace("%20", " ");
+                                lista[0].add(new Jogadores_serv(id, bitimg, nome, pos));
+                                i++;
+                            }
+                            jogadoresAdapter[0] = new ListaJogadoresAdapter(asds, lista[0]);
+                            listView[0] = (ListView) findViewById(R.id.jogadores_lista);
+                            listView[0].setAdapter(jogadoresAdapter[0]);
                         }
-                        jogadoresAdapter[0] = new ListaJogadoresAdapter(asds, lista[0]);
-                        listView[0] = (ListView) findViewById(R.id.jogadores_lista);
-                        listView[0].setAdapter(jogadoresAdapter[0]);
                     }
                 } catch (ExecutionException e) {
                     e.printStackTrace();

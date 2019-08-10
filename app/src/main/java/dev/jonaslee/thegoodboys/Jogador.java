@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.concurrent.ExecutionException;
 
@@ -62,27 +63,31 @@ public class Jogador extends AppCompatActivity {
         TextView p_chute = findViewById(R.id.det_Pchute_jog);
         try {
             Control retorno = new HttpService("?type=seach&ref=jogador&stype=id&id=" + extras.getString("id")).execute().get();
-            if (retorno.getStatus().length() == 5){
-            }else{
-                String args[] = retorno.getResp().split(",");
-                String[] posic = extras.getString("posicao").split("%21");
-                p_p.setText("POS PRIM: " + posic[0]);
-                p_s.setText("POS SEC: " + posic[1]);
-                apelido.setText("APELIDO: " + args[0]);
-                idade.setText("IDADE: " + args[1]);
-                c_fisico.setText("COND FISICO: " + args[2]);
-                atk.setText("ATAQUE: " + args[3]);
-                def.setText("DEFESA: " + args[4]);
-                vel.setText("VELOCIDADE: " + args[5]);
-                marc.setText("MARCACÃO: " + args[6]);
-                prec.setText("PRECISÃO: " + args[7]);
-                forc.setText("FORÇA: " + args[8]);
-                drible.setText("DRIBLE: " + args[9]);
-                p_passe.setText("P. PASSE: " + args[10]);
-                dominio.setText("DOMINIO: " + args[11]);
-                p_lanc.setText("P. LANÇAMENTO: " + args[12]);
-                f_chute.setText("F. CHUTE: " + args[13]);
-                p_chute.setText("P. CHUTE: " + args[14]);
+            if (retorno.getStatus() == "erro"){
+                Toast.makeText(getApplicationContext(), retorno.getResp(), Toast.LENGTH_SHORT).show();
+            }else {
+                if (retorno.getStatus().length() == 5) {
+                } else {
+                    String args[] = retorno.getResp().split(",");
+                    String[] posic = extras.getString("posicao").split("%21");
+                    p_p.setText("POS PRIM: " + posic[0]);
+                    p_s.setText("POS SEC: " + posic[1]);
+                    apelido.setText("APELIDO: " + args[0]);
+                    idade.setText("IDADE: " + args[1]);
+                    c_fisico.setText("COND FISICO: " + args[2]);
+                    atk.setText("ATAQUE: " + args[3]);
+                    def.setText("DEFESA: " + args[4]);
+                    vel.setText("VELOCIDADE: " + args[5]);
+                    marc.setText("MARCACÃO: " + args[6]);
+                    prec.setText("PRECISÃO: " + args[7]);
+                    forc.setText("FORÇA: " + args[8]);
+                    drible.setText("DRIBLE: " + args[9]);
+                    p_passe.setText("P. PASSE: " + args[10]);
+                    dominio.setText("DOMINIO: " + args[11]);
+                    p_lanc.setText("P. LANÇAMENTO: " + args[12]);
+                    f_chute.setText("F. CHUTE: " + args[13]);
+                    p_chute.setText("P. CHUTE: " + args[14]);
+                }
             }
         } catch (InterruptedException e) {
             e.printStackTrace();

@@ -35,18 +35,30 @@ public class HttpService extends AsyncTask<Void, Void, Control> {
             connection.setConnectTimeout(5000);
             connection.connect();
             Scanner scanner = new Scanner(url.openStream());
-            Log.d("asdasd", "asdasdasd");
             while (scanner.hasNext()) {
                 resp.append(scanner.next());
             }
-            Log.d("asdasd", "asdasdasd");
+            return new Gson().fromJson(resp.toString(), Control.class);
+
         } catch (MalformedURLException e) {
             e.printStackTrace();
+            Control ctr = new Control();
+            ctr.setStatus("erro");
+            ctr.setResp("Erro na formação da pesquisa!");
+            return ctr;
         } catch (ProtocolException e) {
             e.printStackTrace();
+            Control ctr = new Control();
+            ctr.setStatus("erro");
+            ctr.setResp("Erro na conexão!");
+            return ctr;
         } catch (IOException e) {
             e.printStackTrace();
+            Control ctr = new Control();
+            ctr.setStatus("erro");
+            ctr.setResp("Erro, Verifique sua conexão com a internet!");
+            return ctr;
         }
-        return new Gson().fromJson(resp.toString(), Control.class);
+
     }
 }

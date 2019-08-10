@@ -1,5 +1,6 @@
 package dev.jonaslee.thegoodboys;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     public static String user = "";
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +49,12 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        int REQUEST_CODE = 0;
+
+
+        
+        requestPermissions(new String[]
+                {Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_CODE);
         final TextView warn = findViewById(R.id.warn);
         warn.setText(user);
         if (this.user == ""){
@@ -99,8 +107,11 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_jogadores) {
             startActivity(new Intent(this, dev.jonaslee.thegoodboys.Jogadores.class));
         } else if (id == R.id.nav_times) {
+            startActivity(new Intent(this, dev.jonaslee.thegoodboys.test.class));
         } else if (id == R.id.nav_historicos) {
         } else if (id == R.id.nav_configuracoes) {
+        } else if (id == R.id.nav_churras) {
+            startActivity(new Intent(this, dev.jonaslee.thegoodboys.ChurrasActivity.class));
         } else if (id == R.id.nav_share) {
         } else if (id == R.id.nav_send) {
             ArrayList<String> nomes = new ArrayList<String>();

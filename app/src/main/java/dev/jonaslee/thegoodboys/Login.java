@@ -30,12 +30,16 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 try {
                     Control retorno = new HttpService("?type=login&user=" + login.getText().toString() + "&pass=" + senha.getText().toString()).execute().get();
-                    if (retorno.getStatus().length() == 5){
-                        warn.setText("Usuario ou Senha Invalidos!");
-                    }else{
-                        warn.setText("Logando com sucesso !!!");
-                        MainActivity.user = retorno.getResp().replace("%20", " ");
-                        startActivity(intent);
+                    if (retorno.getStatus() == "erro"){
+                        warn.setText(retorno.getResp());
+                    }else {
+                        if (retorno.getStatus().length() == 5) {
+                            warn.setText("Usuario ou Senha Invalidos!");
+                        } else {
+                            warn.setText("Logando com sucesso !!!");
+                            MainActivity.user = retorno.getResp().replace("%20", " ");
+                            startActivity(intent);
+                        }
                     }
                 } catch (ExecutionException e) {
                     e.printStackTrace();
